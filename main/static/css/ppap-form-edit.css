@@ -1,0 +1,20 @@
+/* LESS */
+.btn-ppap-form {
+    color: #ffffff;
+    background-color: #008791;
+    width: 100px;
+    margin: 20px 0 40px 0px;
+}
+
+#id_description
+ {
+    width: 400px
+}
+
+.ppap-form-field {
+    width: auto;
+}
+
+.ppap-date-field {
+    width: auto;
+}

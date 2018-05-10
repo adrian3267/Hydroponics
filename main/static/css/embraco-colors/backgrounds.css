@@ -1,0 +1,43 @@
+﻿/*
+    Padrão de cores Embraco:
+        Dark-green:     #008791
+        Green:          #69B39E
+        Light-green:    #C6DE89
+        Orange:         #FFA514
+        Red:            #F56432
+        Grey:           #666666
+*/
+
+/*
+    Padrão para cores de fundo
+*/
+
+.embraco-background-dark-green
+{
+    background-color: #008791;
+}
+
+.embraco-background-green
+{
+    background-color: #69B39E;
+}
+
+.embraco-background-light-green
+{
+    background-color: #C6DE89;
+}
+
+.embraco-background-orange
+{
+    background-color: #FFA514;
+}
+
+.embraco-background-red
+{
+    background-color: #F56432;
+}
+
+.embraco-background-grey
+{
+    background-color: #666666;
+}

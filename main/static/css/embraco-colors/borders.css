@@ -1,0 +1,43 @@
+﻿/*
+    Padrão de cores Embraco:
+        Dark-green:     #008791
+        Green:          #69B39E
+        Light-green:    #C6DE89
+        Orange:         #FFA514
+        Red:            #F56432
+        Grey:           #666666
+*/
+
+/*
+    Padrão para cores de borda
+*/
+
+.embraco-border-dark-green
+{
+    border-color: #008791;
+}
+
+.embraco-border-green
+{
+    border-color: #69B39E;
+}
+
+.embraco-border-light-green
+{
+    border-color: #C6DE89;
+}
+
+.embraco-border-orange
+{
+    border-color: #FFA514;
+}
+
+.embraco-border-red
+{
+    border-color: #F56432;
+}
+
+.embraco-border-grey
+{
+    border-color: #666666;
+}

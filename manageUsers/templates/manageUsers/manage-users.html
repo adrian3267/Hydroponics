@@ -1,0 +1,66 @@
+﻿{% extends 'main/side-menu.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+    <link rel="stylesheet" href="{% static 'css/form-list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/manage-users.css' %}">
+
+    <script src="{%  static 'js/form-list.js' %}"></script>
+
+	<div class="tableBox filterable" id="centerBox">
+        <h3 id="main_heading">Manage Users: {{ user_list_type|title }}</h3>
+        <form method="post" action="">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-default" name="action" value="list_supplier_users">Suppliers users</button>
+            {% if embraco_users_enabled %}
+                <button type="submit" class="btn btn-default" name="action" value="list_embraco_users">Embraco's users</button>
+            {% endif %}
+        </form>
+        {% if user_list_type %}
+            <h3 class="normaltext">Click on the button beside to filter information by column:  </h3>
+            <button class="btn btn-default btn-sm btn-filter" id ="space_from_text"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+            <a href="{{ user_list_type }}\new"><span style="float:right; margin-top:-5px;"><input type="button" class="btn btn-ppap-form" value="Add New"/></span></a>
+            <br>
+            <table class="table">
+                    <thead class="ppap-thead">
+                        <tr class="color1 filters">
+                            {% if user_list_type == 'embraco'%}
+                                <th class="ppap-emb-col1"><input id="column_style" type="text" class="form-control" placeholder="User" disabled></th>
+                                <th class="ppap-emb-col2"><input id="column_style" type="text" class="form-control" placeholder="Job Title" disabled></th>
+                                <th class="ppap-emb-col3"><input id="column_style" type="text" class="form-control" placeholder="Department" disabled></th>
+                                <th class="ppap-emb-col4"><input id="column_style" type="text" class="form-control" placeholder="More Information" disabled></th>
+                            {% elif user_list_type == 'supplier'%}
+                                <th class="ppap-sup-col1"><input id="column_style" type="text" class="form-control" placeholder="Code" disabled></th>
+                                <th class="ppap-sup-col2"><input id="column_style" type="text" class="form-control" placeholder="Supplier Name" disabled></th>
+                                <th class="ppap-sup-col3"><input id="column_style" type="text" class="form-control" placeholder="Country" disabled></th>
+                                <th class="ppap-sup-col4"><input id="column_style" type="text" class="form-control" placeholder="More Information" disabled></th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody class="ppap-tbody">
+                        {% if user_list_type == 'embraco'%}
+                            {% for user_item in user_list %}
+                                    <tr class="table_row_style" id="rowcolor">
+                                        <td class="ppap-emb-col1">{{ user_item }}</td>
+                                        <td class="ppap-emb-col2">{{ user_item.jobTitle }}</td>
+                                        <td class="ppap-emb-col3">{{ user_item.department }}</td>
+                                        <td class="ppap-emb-col4"><a href="/manage-users/embraco/{{ user_item.pk }}"><input type="button" class="btn btn-default" value="More" /></a></td>
+                                    </tr>
+                            {% endfor %}
+                        {% elif user_list_type == 'supplier'%}
+                            {% for user_item in user_list %}
+                                <tr class="table_row_style" id="rowcolor">
+                                    <td class="ppap-sup-col1">{{ user_item.supplierCode }}</td>
+                                    <td class="ppap-sup-col2">{{ user_item }}</td>
+                                    <td class="ppap-sup-col3">{{ user_item.country }}</td>
+                                    <td class="ppap-sup-col4"><a href="/manage-users/supplier/{{ user_item.pk }}"><input type="button" class="btn btn-default" value="More" /></a></td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </tbody>
+            </table>
+        {%  endif %}
+	</div>
+{% endblock %}

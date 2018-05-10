@@ -1,0 +1,36 @@
+﻿{% extends 'main/main.html' %}
+
+{% load staticfiles %}
+{% block main-content %}
+    <div id="bigbox" class="center">
+        <div class="boxes">
+            <br><p>FMEA de<br/>processo</p>
+            <img class="check" src="{% static 'img/check-white.png' %}" />
+        </div>
+
+        <div class="boxes">
+            <br><p>Mapa de<br/> processo</p>
+            <img class="check" src="{% static 'img/check-white.png' %}" />
+        </div>
+
+        <div class="boxes" id="white_box">
+            <br><p>Mapa de<br/> processo</p>
+            <img class="check" src="{% static 'img/check-white.png' %}" />
+        </div>
+
+        <div class="boxes">
+            <br><p>Certificado de matéria prima</p>
+            <img class="check" src="{% static 'img/check-white.png' %}" />
+        </div>
+
+        <div class="boxes">
+            <br><p>Mapa de risco de contaminação HFC </p>
+            <img class="check" src="{% static 'img/check-white.png' %}" />
+        </div>
+
+        <div class="boxes">
+            <p id="align2">Relatório R&R </p>
+            <img class="check" src="{% static 'img/check-white.png' %}" />
+        </div>
+    </div>
+{% endblock %}

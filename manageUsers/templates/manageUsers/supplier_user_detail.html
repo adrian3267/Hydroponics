@@ -1,0 +1,7 @@
+{% extends "main/side-menu.html" %}
+
+{% block base-content %}
+	<h3>{{certification.title}}</h3>
+	<h6>on {{certification.date}}</h6>
+	{{certification.body|safe|linebreaks}}
+{% endblock %}

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Fertileasy - Hydroponics</title>
+
+    <!-- Bootstrap CSS -->
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+
+    <!-- Sidebar CSS -->
+    <link rel="stylesheet" href="{% static 'css/ppap-sidebar.css' %}">
+
+    <!-- Templates CSS -->
+    <link rel="stylesheet" href="{% static 'css/ppap-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/embraco-colors/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/embraco-colors/backgrounds.css' %}">
+    <link rel="stylesheet" href="{% static 'css/embraco-colors/borders.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form-pattern/form-new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form-pattern/form-list.css' %}">
+
+    <!--Apps CSS -->
+    <link rel="stylesheet" href="{% static 'css/hopscotch.css' %}"></link>
+    <link rel="stylesheet" href="{% static 'css/ppap-form-edit.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/certification-overview.css' %}">
+
+    <!-- Bootstrap Scripts -->
+    <script src="{% static 'js/bootstrap.js' %} "></script>
+    <script src="{% static 'js/bootstrap.min.js' %} "></script>
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %} "></script>
+
+     <!--Custom Scripts -->
+    <script src="{% static 'js/hopscotch.js' %}"></script>
+
+</head>
+
+<body style="overflow: hidden">
+    <!-- Complete page -->
+    <div class="ppap-header">
+        <p class="ppap-header-text">Fertileasy - Hydroponics</p>
+    </div>
+    <div class="ppap-language">
+        <p class="ppap-language-switcher">Language</p>
+    </div>
+    <div class="ppap-header-space">
+        {% block base-header %}
+        {% endblock %}
+    </div>
+    <img class="header-img" src="{% static 'img/logo-fertileasy.jpg' %}" alt="Fertileasy">
+    <div class="header-color-bar header-color-bar-1"></div>
+    <div class="header-color-bar header-color-bar-2"></div>
+    <div class="header-color-bar header-color-bar-3"></div>
+    <div class="header-color-bar header-color-bar-4"></div>
+    <div class="header-color-bar header-color-bar-5"></div>
+
+    <div class="ppap-base-div" style="margin-top: 80px">
+        {% block base-content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <div class="ppap-footer">
+            <p class="ppap-footer-text">Fertileasy ® Todos os direitos reservados | Desenvolvido pela UFSC</p>
+        </div>
+    </footer>
+    <!-- /Complete Page -->
+</body>
+
+</html>

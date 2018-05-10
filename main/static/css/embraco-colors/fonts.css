@@ -1,0 +1,43 @@
+﻿/*
+    Padrão de cores Embraco:
+        Dark-green:     #008791
+        Green:          #69B39E
+        Light-green:    #C6DE89
+        Orange:         #FFA514
+        Red:            #F56432
+        Grey:           #666666
+*/
+
+/*
+    Padrão para cores da fonte
+*/
+
+.embraco-font-dark-green
+{
+    color: #008791;
+}
+
+.embraco-font-green
+{
+    color: #69B39E;
+}
+
+.embraco-font-light-green
+{
+    color: #C6DE89;
+}
+
+.embraco-font-orange
+{
+    color: #FFA514;
+}
+
+.embraco-font-red
+{
+    color: #F56432;
+}
+
+.embraco-font-grey
+{
+    color: #666666;
+}

@@ -1,0 +1,15 @@
+﻿{% extends 'main/base.html' %}
+
+{% block base-header %}
+    <div style="color: #008791;font-size: small; margin-left: 10px;">
+        <b>{{ header_line1_label }} </b>{{ header_line1_value }}<br>
+        <b>{{ header_line2_label }} </b>{{ header_line2_value }}<br>
+        <b>{{ header_line3_label }} </b>{{ header_line3_value }}<br>
+        <b>{{ header_line4_label }} </b>{{ header_line4_value }}<br>
+    </div>
+{% endblock %}
+
+{% block base-content %}
+    {% block main-content %}
+    {% endblock %}
+{% endblock %}

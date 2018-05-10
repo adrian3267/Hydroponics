@@ -1,0 +1,127 @@
+﻿/*
+    Padrão de cores Embraco:
+        Dark-green:     #008791
+        Green:          #69B39E
+        Light-green:    #C6DE89
+        Orange:         #FFA514
+        Red:            #F56432
+        Grey:           #666666
+*/
+.ppap-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #008791;
+    height: 20px;
+    width: 100%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.ppap-header-text {
+    color: white;
+    text-align: center;
+}
+
+.ppap-language{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #008791;
+    height: 20px;
+    width: 15%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.ppap-language-switcher {
+    color: white;
+    text-align: right;
+}
+
+.ppap-header-space {
+    position: fixed;
+    top: 20px;
+    left: 0px;
+}
+
+.header-img {
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    height: 50px;
+}
+
+.header-color-bar {
+    position: fixed;
+    top: 95px;
+    height: 5px;
+    width: 20%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.header-color-bar-1 {
+    left: 0%;
+    background-color: #008791;
+}
+.header-color-bar-2 {
+    left: 20%;
+    background-color: #69B39E;
+}
+.header-color-bar-3 {
+    left: 40%;
+    background-color: #C6DE89;
+}
+.header-color-bar-4 {
+    left: 60%;
+    background-color: #FFA514;
+}
+.header-color-bar-5 {
+    left: 80%;
+    background-color: #F56432;
+}
+
+.ppap-footer {
+    z-index: 2000;
+    position: fixed;
+    bottom: 0;
+    background-color: #008791;
+    height: 30px;
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+}
+
+.ppap-footer-text {
+    color: white;
+    text-align: left;
+    padding: 4px 0px 0px 10px;
+    font-size: smaller;
+}
+#side-menu-button {
+    color: white;
+    margin: 0px
+}
+
+.side-menu-button-bar {
+    width: 25px;
+    position: fixed;
+    height: 100%;
+    background-color: #008791;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid #fff;
+}
+
+.ppap-base-div {
+    height: calc(100vh - 130px);
+}
+
+.ppap-content-div {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    height: 100%;
+    overflow-y: auto;
+}

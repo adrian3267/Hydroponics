@@ -1,0 +1,29 @@
+﻿{% extends 'main/base.html' %}
+
+{% block base-header %}
+{% endblock %}
+
+{% block base-content %}
+    <body>
+        <div class="container" style="max-width: 500px; color: #008791;">
+
+          <form method="post" class="form-signin">
+              {% csrf_token %}
+            <h2 class="form-signin-heading" align="center">Welcome!</h2>
+            <h4 class="form-signin-heading" align="center">Please, insert your username and password</h4>
+            <input type="text" id="inputName" name="inputName" class="form-control" placeholder="Username" required="" autofocus="">
+            <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required="">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: #008791;">Sign in</button>
+          </form>
+
+        </div>
+
+{#        <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>#}
+
+    </body>
+{% endblock %}

@@ -1,0 +1,84 @@
+.formsBox {
+	height: 550px;
+    max-width: 600px;
+	background-color: #FFFFFF;
+	top: 20px;
+    margin-left: 5%;
+	position: static;
+}
+
+#forms_title {
+    color: #008791;
+    text-align: left;
+}
+
+.fancycheckbox div {
+  clear: both;
+  overflow: hidden;
+}
+
+.fancycheckbox label {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  font-weight: normal;
+}
+
+.fancycheckbox input[type="checkbox"]:empty {
+  display: none;
+}
+
+.fancycheckbox input[type="checkbox"]:empty ~ label {
+  position: relative;
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.fancycheckbox input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+.fancycheckbox input[type="checkbox"]:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+.fancycheckbox input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+.checkbox-color input[type="checkbox"]:checked ~ label {
+  color: #777;
+}
+
+.fancycheckbox input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #333;
+  background-color: #ccc;
+}
+
+.fancycheckbox input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.checkbox-color input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5cb85c;
+}
+
