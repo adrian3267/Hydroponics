@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'evaluationReport',
     'packagingDescription',
     'materialPlanning',
-    'hfcRiskMap',
     'processFMEA',
     'appendedDocuments',
     'manageUsers',
