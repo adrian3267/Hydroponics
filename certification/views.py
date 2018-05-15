@@ -21,7 +21,7 @@ def index(request):
             # process the data in form.cleaned_data as required
             savedform = form.save()
             # redirect to a new URL:
-            return HttpResponseRedirect('/certification/new/' + str(savedform.pk))
+            return HttpResponseRedirect('/certification/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
