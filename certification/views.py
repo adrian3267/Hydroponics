@@ -10,7 +10,7 @@ from .models import Certification
 from .models import RequiredCertificationDocuments
 from .models import Documents
 
-@login_required(login_url='/auth/login/')
+#@login_required(login_url='/auth/login/')
 def index(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
