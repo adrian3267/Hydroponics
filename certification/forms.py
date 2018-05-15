@@ -8,16 +8,16 @@ class CertificationForm(forms.ModelForm):
         OTHER = 'Other'
         model = Certification
         fields = [
-            "supplier",
-            "responsible",
+          #  "supplier",
+          #  "responsible",
             "code",
             "product_description",
-            "revision_ECM",
-            "revision_last",
-            "planned_steps",
+          #  "revision_ECM",
+          #  "revision_last",
+          #  "planned_steps",
             "date",
-            "submission_reason",
-            "submission_reason_other",
+          #  "submission_reason",
+          #  "submission_reason_other",
         ]
 
 
@@ -32,26 +32,26 @@ class CertificationForm(forms.ModelForm):
             (OTHER,'Other (Please type the explanation below)'),
         )
         widgets = {
-            "supplier": forms.Select(attrs={'class': 'form-control ppap-form-field'}),
-            "responsible": forms.Select(attrs={'class':'form-control ppap-form-field'}),
+          #  "supplier": forms.Select(attrs={'class': 'form-control ppap-form-field'}),
+          #  "responsible": forms.Select(attrs={'class':'form-control ppap-form-field'}),
             "code": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0}),
             "product_description": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
-            "revision_ECM": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+          #  "revision_ECM": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
             #"revision_last": forms.SelectDateWidget(attrs={'style': 'width: 32.8%; display: inline-block;','class': 'form-control ppap-form-field'}),
-            "revision_last": forms.DateInput(attrs={'class': 'form-control ppap-form-field datepicker'}),
-            "planned_steps": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+          #  "revision_last": forms.DateInput(attrs={'class': 'form-control ppap-form-field datepicker'}),
+          #  "planned_steps": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
             #"date":forms.SelectDateWidget(attrs={'style': 'width: 32.8%; display: inline-block;','class':'form-control ppap-form-field'}),
             "date": forms.DateInput(attrs={'class': 'datepicker , form-control ppap-form-field'}),
-            "submission_reason": forms.Select(choices=SUB_REASON_CHOICES, attrs={'class': 'form-control ppap-form-field','id':'id_application_method'}),
-            "submission_reason_other": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+          #  "submission_reason": forms.Select(choices=SUB_REASON_CHOICES, attrs={'class': 'form-control ppap-form-field','id':'id_application_method'}),
+          #  "submission_reason_other": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
         }
 
     def __init__(self, data=None, *args, **kwargs):
         super(CertificationForm, self).__init__(data, *args, **kwargs)
 
-        # If 'OTHER' is chosen, set submission_reason_other as required
-        if data and data.get('submission_reason', None) == self.OTHER:
-            self.fields['submission_reason_other'].required = True
+ #       # If 'OTHER' is chosen, set submission_reason_other as required
+ #       if data and data.get('submission_reason', None) == self.OTHER:
+ #           self.fields['submission_reason_other'].required = True
 
 
 class DeleteCertificationForm(forms.ModelForm):
