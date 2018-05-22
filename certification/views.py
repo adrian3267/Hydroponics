@@ -6,27 +6,43 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import CertificationForm
 from .forms import DeleteCertificationForm
+from .forms import GardenForm
 from .models import Certification
 from .models import RequiredCertificationDocuments
 from .models import Documents
+from .models import Garden
 
-#@login_required(login_url='/auth/login/')
+@login_required(login_url='/auth/login/')
 def index(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = CertificationForm(request.POST)
+        form = GardenForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
             savedform = form.save()
             # redirect to a new URL:
             return HttpResponseRedirect('/certification/')
-
+        
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = CertificationForm()
+        form = GardenForm()
     return render(request, 'certification/certification-new.html', {"form": form})
+
+
+@login_required(login_url='/auth/login/')
+def getParameters(request, pk, template_name = 'certification/certification-new.html'):
+    instance = Garden.objects.get(id=pk)
+    form = GardenForm(request.POST or None, instance=instance)
+    if request.method == 'POST':
+        # check whether it's valid:dj
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # redirect to a new URL:
+            form.save()
+            return HttpResponseRedirect("/certification/")
+    return render(request, template_name, { "form": form })
 
 
 @login_required(login_url='/auth/login/')

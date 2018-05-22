@@ -1,6 +1,21 @@
 from django import forms
 from .models import Certification
+from .models import Garden
 from django.views.generic import DetailView
+
+class GardenForm(forms.ModelForm):
+    class Meta:
+        OTHER = 'Other'
+        model = Garden
+        fields = [
+            "concentration",
+            "next_cycle",
+        ]
+        widgets = {
+            "concentration": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0}),
+            "next_cycle": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+        }
+
 
 class CertificationForm(forms.ModelForm):
     OTHER = 'Other'

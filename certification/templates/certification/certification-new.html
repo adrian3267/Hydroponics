@@ -9,101 +9,39 @@
 	<script src="{%  static 'js/form-new.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/form_test.css' %}">
 
-    <form method="post">
-        {% csrf_token %}
-    <div class="formsBox">
-        <h3 id="forms_title">Fill up the information to add a new certification:</h3>
-		<br>
-		<br>
-		
- <!--   	<div class="form-group row">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">Supplier:</label>
-    	  <div class="col-xs-10">
-             {{ form.supplier }}
-             {{ form.supplier.errors }}
-    	  </div>
-    	</div>
+	<!-- Início dos campos para alteração de parâmetros da planta -->
+	
+	<form method="post">
+		{% csrf_token %}
+		<div class="formsBox">
+			<h2 id="forms_title">Altere os parâmetros de referência:</h2>
+			<br>
+			<br>
 
-        <div class="form-group row">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">Responsible:</label>
-    	  <div class="col-xs-10">
-             {{ form.responsible }}
-             {{ form.responsible.errors }}
-    	  </div>
-    	</div>
--->
-        <div class="form-group row">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">Code:</label>
-    	  <div class="col-xs-10">
-             {{ form.code}}
-             {{ form.code.errors}}
-    	  </div>
-    	</div>
-
-        <div class="form-group row">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">Product Description:</label>
-    	  <div class="col-xs-10">
-             {{ form.product_description }}
-             {{ form.product_description.errors }}
-    	  </div>
-    	</div>
-
-<!--       	<div class="form-group row">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">ECM Revision:</label>
-    	  <div class="col-xs-10">
-             {{ form.revision_ECM }}
-             {{ form.revision_ECM.errors }}
-    	  </div>
-    	</div>
-
-       	<div class="form-group row">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">Last Revision:</label>
-    	  <div class="col-xs-10">
-             {{ form.revision_last }}
-             {{ form.revision_last.errors }}
-    	  </div>
-    	</div>
-
-       	<div class="form-group row">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">Planned Steps:</label>
-    	  <div class="col-xs-10">
-             {{ form.planned_steps }}
-             {{ form.planned_steps.errors }}
-    	  </div>
-    	</div>
--->
-       	<div class="form-group row">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">Date:</label>
-    	  <div class="col-xs-10">
-             {{ form.date }}
-             {{ form.date.errors }}
-    	  </div>
-    	</div>
-
-<!--		<div class="form-group row">
-    	  	<label for="id_application_method" class="col-xs-2 col-form-label, embraco-font-dark-green">Submission Reason:</label>
-			<div class="col-xs-10">
-			    {{form.submission_reason}}
-                {{form.submission_reason.errors}}
+			<div class="form-group row">
+				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Concentração:</label>
+					  <div class="col-xs-10">
+						 {{ form.concentration}}
+						 <!-- {{ form.concentration.errors}} -->
+					  </div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Próximo Ciclo:</label>
+					  <div class="col-xs-10">
+						 {{ form.next_cycle}}
+						<!--  {{ form.next_cycle.errors}} -->
+					  </div>
 			</div>
 		</div>
 
-        <div id="Other" class="form-group row other_option">
-    	  <label class="col-xs-2 col-form-label, embraco-font-dark-green">Other Reason:</label>
-    	  <div class="col-xs-10">
-             {{ form.submission_reason_other }}
-             {{ form.submission_reason_other.errors }}
-    	  </div>
-    	</div>
--->
-        <input type="submit" class="btn btn-ppap-form"  value="Next" />
-    </form>
-
-    <span style="float:right; margin-top:20px;"><input type="button" id="startTourBtn" class="btn btn-default" value="HELP!"/></span>
+		<input type="submit" class="btn btn-ppap-form"  value="Enviar" />
+	</form>
 
 
-    <!-- define your tour in this file -->
+ <!--   <span style="float:right; margin-top:20px;"><input type="button" id="startTourBtn" class="btn btn-default" value="HELP!"/></span>
+
     <script src="{% static 'js/certification-help.js' %}"></script>
-    </div>
+    </div> -->
 
 {% endblock %}
