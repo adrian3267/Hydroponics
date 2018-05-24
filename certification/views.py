@@ -12,7 +12,6 @@ from .models import RequiredCertificationDocuments
 from .models import Documents
 from .models import Garden, GardenSet
 
-@login_required(login_url='/auth/login/')
 def addMeasure(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -31,7 +30,6 @@ def addMeasure(request):
     return render(request, 'certification/certification-new.html', {"form": form})
 
 
-@login_required(login_url='/auth/login/')
 def changeSetpoints(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -50,7 +48,7 @@ def changeSetpoints(request):
     return render(request, 'certification/change-setpoints.html', {"form": form})
 
 
-@login_required(login_url='/auth/login/')
+
 def getParameters(request, pk, template_name = 'certification/certification-new.html'):
     instance = Garden.objects.get(id=pk)
     form = GardenForm(request.POST or None, instance=instance)
