@@ -31,10 +31,10 @@ def addMeasure(request):
 
 
 def changeSetpoints(request):
+    instance = GardenSet.objects.get(id=1)
+    form = GardenSetForm(request.POST or None, instance=instance)
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = GardenSetForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
@@ -43,15 +43,13 @@ def changeSetpoints(request):
             return HttpResponseRedirect('/certification/')
         
     # if a GET (or any other method) we'll create a blank form
-    else:
-        form = GardenSetForm()
     return render(request, 'certification/change-setpoints.html', {"form": form})
 
 
 
 def getParameters(request, pk, template_name = 'certification/certification-new.html'):
-    instance = Garden.objects.get(id=pk)
-    form = GardenForm(request.GET or None, instance=instance)
+    instance = GardenSet.objects.get(id=pk)
+    form = GardenSetForm(request.GET or None, instance=instance)
     if request.method == 'POST':
         # check whether it's valid:dj
         if form.is_valid():
@@ -59,7 +57,7 @@ def getParameters(request, pk, template_name = 'certification/certification-new.
             # redirect to a new URL:
             form.save()
             return HttpResponseRedirect("/certification/")
-    return HttpResponse("concentration: " + instance.concentration + "  next_cycle: " + instance.next_cycle)
+    return HttpResponse("concentration_set: " + instance.concentration_set + "  next_cycle_set: " + instance.next_cycle_set)
 #    return render(request, template_name, { "form": form })
 
 
