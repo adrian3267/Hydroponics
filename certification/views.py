@@ -51,7 +51,7 @@ def changeSetpoints(request):
 
 def getParameters(request, pk, template_name = 'certification/certification-new.html'):
     instance = Garden.objects.get(id=pk)
-    form = GardenForm(request.POST or None, instance=instance)
+    form = GardenForm(request.GET or None, instance=instance)
     if request.method == 'POST':
         # check whether it's valid:dj
         if form.is_valid():
@@ -59,7 +59,8 @@ def getParameters(request, pk, template_name = 'certification/certification-new.
             # redirect to a new URL:
             form.save()
             return HttpResponseRedirect("/certification/")
-    return render(request, template_name, { "form": form })
+    return HttpResponse("Concentração: " + instance.concentration + "  Próximo Ciclo: " + instance.next_cycle)
+#    return render(request, template_name, { "form": form })
 
 
 
