@@ -7,7 +7,9 @@ class GardenSet(models.Model):
 
 class Garden(models.Model):
     concentration = models.CharField(max_length=140, default='')
+    luminosity = models.CharField(max_length=140, default='')
     next_cycle = models.CharField(max_length=140, default='')
+    recirculation_pump = models.CharField(max_length=140, default='')
     
 
 class Certification(models.Model):

@@ -24,11 +24,15 @@ class GardenForm(forms.ModelForm):
         model = Garden
         fields = [
             "concentration",
+            "luminosity",
             "next_cycle",
+            "recirculation_pump",
         ]
         widgets = {
             "concentration": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0}),
+            "luminosity": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
             "next_cycle": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+            "recirculation_pump": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
         }
 
 

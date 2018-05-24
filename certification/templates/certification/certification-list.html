@@ -38,7 +38,9 @@
                         {% for item in object_list %}
 		            	    <tr class="table_row_style" id="rowcolor">
                               <td>{{ item.concentration }}</td>
+							  <td>{{ item.luminosity }}</td>
                               <td>{{item.next_cycle}}</td>
+							  <td>{{ item.recirculation_pump }}</td>
 <!--                               <td>{{ item.date }}</td>
                               <td>{{ item.product_description }}</td> -->
                               <td><a href="/certification/{{item.pk}}/"><input type="button" class="btn btn-default" value="More" /></a></td>
