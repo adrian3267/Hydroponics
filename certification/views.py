@@ -57,7 +57,8 @@ def getParameters(request, pk, template_name = 'certification/certification-new.
             # redirect to a new URL:
             form.save()
             return HttpResponseRedirect("/certification/")
-    return HttpResponse("concentration_set: " + instance.concentration_set + "  next_cycle_set: " + instance.next_cycle_set)
+    return HttpResponse(instance.concentration_set)
+                             #+ "/n" + instance.next_cycle_set
 #    return render(request, template_name, { "form": form })
 
 
