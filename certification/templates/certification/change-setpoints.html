@@ -14,22 +14,22 @@
 	<form method="post">
 		{% csrf_token %}
 		<div class="formsBox">
-			<h2 id="forms_title">Adicione uma nova medição:</h2>
+			<h2 id="forms_title">Altere os parâmetros de referência:</h2>
 			<br>
 			<br>
 
 			<div class="form-group row">
-				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Concentração:</label>
+				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Setpoint Concentração:</label>
 					  <div class="col-xs-10">
-						 {{ form.concentration}}
+						 {{ form.concentration_set}}
 						 <!-- {{ form.concentration.errors}} -->
 					  </div>
 			</div>
 			
 			<div class="form-group row">
-				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Próximo Ciclo:</label>
+				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Setpoint Próximo Ciclo:</label>
 					  <div class="col-xs-10">
-						 {{ form.next_cycle}}
+						 {{ form.next_cycle_set}}
 						<!--  {{ form.next_cycle.errors}} -->
 					  </div>
 			</div>

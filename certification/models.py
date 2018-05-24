@@ -1,9 +1,14 @@
 from django.db import models
 from authentication.models import SupplierProfile, EmbracoProfile
 
+class GardenSet(models.Model):
+    concentration_set = models.CharField(max_length=140, default='')
+    next_cycle_set = models.CharField(max_length=140, default='')
+
 class Garden(models.Model):
     concentration = models.CharField(max_length=140, default='')
     next_cycle = models.CharField(max_length=140, default='')
+    
 
 class Certification(models.Model):
     code = models.CharField(max_length=140, default='0000')

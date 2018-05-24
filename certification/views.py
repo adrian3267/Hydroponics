@@ -6,14 +6,14 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import CertificationForm
 from .forms import DeleteCertificationForm
-from .forms import GardenForm
+from .forms import GardenForm, GardenSetForm
 from .models import Certification
 from .models import RequiredCertificationDocuments
 from .models import Documents
-from .models import Garden
+from .models import Garden, GardenSet
 
 @login_required(login_url='/auth/login/')
-def index(request):
+def addMeasure(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -29,6 +29,25 @@ def index(request):
     else:
         form = GardenForm()
     return render(request, 'certification/certification-new.html', {"form": form})
+
+
+@login_required(login_url='/auth/login/')
+def changeSetpoints(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = GardenSetForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            savedform = form.save()
+            # redirect to a new URL:
+            return HttpResponseRedirect('/certification/')
+        
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = GardenSetForm()
+    return render(request, 'certification/change-setpoints.html', {"form": form})
 
 
 @login_required(login_url='/auth/login/')

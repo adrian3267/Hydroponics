@@ -13,7 +13,7 @@
 		    <h3 id="main_heading">Últimas Aquisições:</h3>
             <h3 class="normaltext">Clique no botão ao lado para filtrar as informações por coluna:</h3>
             <button class="btn btn-default btn-sm btn-filter" id ="space_from_text"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-            <a href="/certification/new"><span style="float:right; margin-top:-5px;"><input type="button" class="btn btn-ppap-form" value="Add New" /></span></a>
+            <a href="/certification/change_setpoints"><span style="float:right; margin-top:-5px;"><input type="button" class="btn btn-ppap-form" value="Setpoints" /></span></a>
     {% comment %}
 		<div id="searchBox">
 			<h4 class="normaltext">Pesquise por palavra-chave:</h4>
@@ -26,21 +26,21 @@
             <table class="table">
                     <thead>
                         <tr class="color1 filters">
-                            <th><input id="column_style" type="text" class="form-control" placeholder="Code" disabled></th>
-                            <th><input id="column_style" type="text" class="form-control" placeholder="Supplier" disabled></th>
-                            <th><input id="column_style" type="text" class="form-control" placeholder="Date" disabled></th>
-                            <th><input id="column_style" type="text" class="form-control" placeholder="Product Description" disabled></th>
-                            <th><input id="column_style" type="text" class="form-control" placeholder="More Information" disabled></th>
+                            <th><input id="column_style" type="text" class="form-control" placeholder="Concentração" disabled></th>
+                            <th><input id="column_style" type="text" class="form-control" placeholder="Próx. Ciclo" disabled></th>
+                            <th><input id="column_style" type="text" class="form-control" placeholder="Mais" disabled></th>
+<!--                             <th><input id="column_style" type="text" class="form-control" placeholder="Product Description" disabled></th>
+                            <th><input id="column_style" type="text" class="form-control" placeholder="More Information" disabled></th> -->
 
                         </tr>
                     </thead>
                     <tbody>
                         {% for item in object_list %}
 		            	    <tr class="table_row_style" id="rowcolor">
-                              <td>{{ item.code }}</td>
-                              <td>{{item.supplier}}</td>
-                              <td>{{ item.date }}</td>
-                              <td>{{ item.product_description }}</td>
+                              <td>{{ item.concentration }}</td>
+                              <td>{{item.next_cycle}}</td>
+<!--                               <td>{{ item.date }}</td>
+                              <td>{{ item.product_description }}</td> -->
                               <td><a href="/certification/{{item.pk}}/"><input type="button" class="btn btn-default" value="More" /></a></td>
 		                	</tr>
                         {% endfor %}
