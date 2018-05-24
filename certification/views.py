@@ -60,9 +60,7 @@ def getParameters(request, pk, template_name = 'certification/certification-new.
             form.save()
             return HttpResponseRedirect("/certification/")
     return render(request, template_name, { "form": form })
-    else:
-            form = GardenForm()
-            return render(request, 'certification/certification-new.html', {"form": form})
+
 
 
 @login_required(login_url='/auth/login/')
