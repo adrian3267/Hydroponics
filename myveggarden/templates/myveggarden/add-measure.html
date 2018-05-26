@@ -27,9 +27,34 @@
 			</div>
 			
 			<div class="form-group row">
-				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Próximo Ciclo:</label>
+				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Luminosidade:</label>
 					  <div class="col-xs-10">
-						 {{ form.next_cycle}}
+						 {{ form.luminosity}}
+						<!--  {{ form.next_cycle.errors}} -->
+					  </div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Bomba de Irrigação:</label>
+					  <div class="col-xs-10">
+						 {{ form.plant_pump}}
+						<!--  {{ form.next_cycle.errors}} -->
+					  </div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Bomba de Recirculação:</label>
+					  <div class="col-xs-10">
+						 {{ form.recirculation_pump}}
+						<!--  {{ form.next_cycle.errors}} -->
+					  </div>
+			</div>
+
+
+			<div class="form-group row">
+				<label class="col-xs-2 col-form-label, embraco-font-dark-green">Bomba de Solução:</label>
+					  <div class="col-xs-10">
+						 {{ form.solution_pump}}
 						<!--  {{ form.next_cycle.errors}} -->
 					  </div>
 			</div>

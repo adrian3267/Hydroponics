@@ -9,10 +9,12 @@ class GardenSetForm(forms.ModelForm):
         fields = [
             "concentration_set",
             "next_cycle_set",
+            "plant_pump_set",
         ]
         widgets = {
             "concentration_set": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0}),
             "next_cycle_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+            "plant_pump_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
         }
 
 
@@ -23,14 +25,20 @@ class GardenForm(forms.ModelForm):
         fields = [
             "concentration",
             "luminosity",
-            "next_cycle",
+         #   "next_cycle",
+         #   "cycle_time",
+            "plant_pump",
             "recirculation_pump",
+            "solution_pump",
         ]
         widgets = {
             "concentration": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0}),
             "luminosity": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
-            "next_cycle": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+         #   "next_cycle": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+         #   "cycle_time": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+            "plant_pump": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
             "recirculation_pump": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+            "solution_pump": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
         }
 
 

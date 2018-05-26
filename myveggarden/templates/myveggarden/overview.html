@@ -3,6 +3,7 @@
 {% block content %}
 {% load staticfiles %}
 
+
     <div id="bigbox" class="center">
         <div class="boxes">
             <br><p>{{ garden_obj.concentration }}<br/>processo</p>
@@ -34,4 +35,5 @@
             <img class="check" src="{% static 'img/check-white.png' %}" />
         </div>
     </div>
+    <a href="/myveggarden/history"><span style="float:right; margin-top:-5px; margin-right:40px;"><input type="button" class="btn btn-ppap-form" value="Histórico" /></span></a>
 {% endblock %}
