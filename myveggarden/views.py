@@ -17,12 +17,12 @@ def addMeasure(request):
             # process the data in form.cleaned_data as required
             savedform = form.save()
             # redirect to a new URL:
-            return HttpResponseRedirect('/certification/')
+            return HttpResponseRedirect('/history/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = GardenForm()
-    return render(request, 'certification/certification-new.html', {"form": form})
+    return render(request, 'myveggarden.measure-list.html', {"form": form})
 
 
 def changeSetpoints(request):
@@ -35,10 +35,10 @@ def changeSetpoints(request):
             # process the data in form.cleaned_data as required
             savedform = form.save()
             # redirect to a new URL:
-            return HttpResponseRedirect('/certification/')
+            return HttpResponseRedirect('/history/')
 
     # if a GET (or any other method) we'll create a blank form
-    return render(request, 'certification/change-setpoints.html', {"form": form})
+    return render(request, 'myveggarden/change-setpoints.html', {"form": form})
 
 
 def getSetpoints(request, pk, template_name='certification/certification-new.html'):
@@ -50,7 +50,7 @@ def getSetpoints(request, pk, template_name='certification/certification-new.htm
             # process the data in form.cleaned_data as required
             # redirect to a new URL:
             form.save()
-            return HttpResponseRedirect("/certification/")
+            return HttpResponseRedirect("/history/")
     return HttpResponse(instance.concentration_set)
     # + "/n" + instance.next_cycle_set
 

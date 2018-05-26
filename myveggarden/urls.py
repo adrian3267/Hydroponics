@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^change_setpoints$', views.changeSetpoints, name = 'change_setpoints'),
     url(r'^home/$', views.home, name='home'),
     url(r'^$', views.overview, name = 'overview'),
-    url(r'^history$', ListView.as_view(queryset=Garden.objects.all().order_by("-id")[:25], template_name="certification/certification-list.html"), name='garden_history'),
+    url(r'^history$', ListView.as_view(queryset=Garden.objects.all().order_by("-id")[:25], template_name="myveggarden.measure-list.html"), name='garden_history'),
     url(r'^get/(?P<pk>\d+)/$', views.getSetpoints, name='get-parameters'),
 ]

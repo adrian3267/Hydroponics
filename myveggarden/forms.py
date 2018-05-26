@@ -36,7 +36,7 @@ class GardenForm(forms.ModelForm):
 
 class YourDetailView(DetailView):
     context_object_name = "certific"
-    model = Certification
+    model = Garden
 
     def get_context_data(self, **kwargs):
         """This has been overridden to add `car` to the templates context,
