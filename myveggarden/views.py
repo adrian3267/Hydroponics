@@ -59,7 +59,8 @@ def getSetpoints(request, pk, template_name='certification/certification-new.htm
 
 
 def overview(request):
-    garden_obj = Garden.objects.get(id=1)
+    garden_obj = Garden.objects.all().order_by("-id")[:1]
+    #garden_obj = Garden.objects.get(id=1)
     return render(request, 'myveggarden/overview.html', { "garden_obj": garden_obj })
 
 def home(request):

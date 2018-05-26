@@ -6,33 +6,27 @@
 
     <div id="bigbox" class="center">
         <div class="boxes">
-            <br><p>{{ garden_obj.concentration }}<br/>processo</p>
-            <img class="check" src="{% static 'img/check-white.png' %}" />
+            <br><p>Concentração Atual:</p><p>{{ garden_obj.first.concentration }}</p>
         </div>
 
         <div class="boxes">
-            <br><p>Mapa de<br/> processo</p>
-            <img class="check" src="{% static 'img/check-white.png' %}" />
+            <br><p>Luminosidade Atual:</p><p>{{ garden_obj.first.luminosity }}</p>
         </div>
 
         <div class="boxes" id="white_box">
-            <br><p>Mapa de<br/> processo</p>
-            <img class="check" src="{% static 'img/check-white.png' %}" />
+            <br><p>Bomba de Irrigação:</p><p>{{ garden_obj.first.plant_pump }}</p>
         </div>
 
         <div class="boxes">
-            <br><p>Certificado de matéria prima</p>
-            <img class="check" src="{% static 'img/check-white.png' %}" />
+            <br><br><p>-</p>
         </div>
 
         <div class="boxes">
-            <br><p>Mapa de risco de contaminação HFC </p>
-            <img class="check" src="{% static 'img/check-white.png' %}" />
+            <br><br><p>-</p>
         </div>
 
         <div class="boxes">
-            <p id="align2">Relatório R&R </p>
-            <img class="check" src="{% static 'img/check-white.png' %}" />
+            <p id="align2">-</p>
         </div>
     </div>
     <a href="/myveggarden/history"><span style="float:right; margin-top:-5px; margin-right:40px;"><input type="button" class="btn btn-ppap-form" value="Histórico" /></span></a>
