@@ -22,7 +22,15 @@
 				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Setpoint Concentração:</label>
 					  <div class="col-xs-10">
 						 {{ form.concentration_set}}
-						 <!-- {{ form.concentration.errors}} -->
+						 {{ form.concentration_set.errors}}
+					  </div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Acionamento Bomba de Irrigação:</label>
+					  <div class="col-xs-10">
+						 {{ form.plant_pump_set}}
+						 {{ form.plant_pump.errors}}
 					  </div>
 			</div>
 			
@@ -30,7 +38,7 @@
 				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Setpoint Próximo Ciclo:</label>
 					  <div class="col-xs-10">
 						 {{ form.next_cycle_set}}
-						<!--  {{ form.next_cycle.errors}} -->
+						 {{ form.next_cycle.errors}}
 					  </div>
 			</div>
 		</div>

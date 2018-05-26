@@ -144,4 +144,6 @@ def editDocumentsView(request, pk):
 
 
 def overview(request):
-    return render(request, 'certification/overview.html')
+    #garden_obj = Garden.objects.all().order_by("-id")[:1]
+    garden_obj = Garden.objects.get(id=1)
+    return render(request, 'certification/overview.html', { "garden_obj": garden_obj })
