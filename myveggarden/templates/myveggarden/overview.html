@@ -13,20 +13,20 @@
             <br><p>Luminosidade Atual:</p><p>{{ garden_obj.first.luminosity }}</p>
         </div>
 
+        <div class="boxes">
+            <br><p>Temperatura:</p><p>26ºC</p>
+        </div>
+
         <div class="boxes" id="white_box">
             <br><p>Bomba de Irrigação:</p><p>{{ garden_obj.first.plant_pump }}</p>
         </div>
 
-        <div class="boxes">
-            <br><br><p>-</p>
+        <div class="boxes" id="white_box">
+            <br><p>B. de Recirculação:</p><p>{{ garden_obj.first.recirculation_pump }}</p>
         </div>
 
-        <div class="boxes">
-            <br><br><p>-</p>
-        </div>
-
-        <div class="boxes">
-            <p id="align2">-</p>
+        <div class="boxes" id="white_box">
+            <br><p>Bomba de Solução:</p><p>{{ garden_obj.first.solution_pump }}</p>
         </div>
     </div>
     <a href="/myveggarden/history"><span style="float:right; margin-top:-5px; margin-right:40px;"><input type="button" class="btn btn-ppap-form" value="Histórico" /></span></a>
