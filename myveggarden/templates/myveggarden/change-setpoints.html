@@ -25,20 +25,45 @@
 						 {{ form.concentration_set.errors}}
 					  </div>
 			</div>
+
 			
+			<div class="form-group row">
+				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Próximo Ciclo de Acionamento (Horário):</label>
+					  <div class="col-xs-10">
+						 {{ form.next_cycle_set}}
+						 {{ form.next_cycle_set.errors}}
+					  </div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Tempo de Ciclo:</label>
+					  <div class="col-xs-10">
+						 {{ form.cycle_time_set}}
+						 {{ form.cycle_time_set.errors}}
+					  </div>
+			</div>
+
 			<div class="form-group row">
 				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Acionamento Bomba de Irrigação:</label>
 					  <div class="col-xs-10">
 						 {{ form.plant_pump_set}}
-						 {{ form.plant_pump.errors}}
+						 {{ form.plant_pump_set.errors}}
 					  </div>
 			</div>
-			
+
 			<div class="form-group row">
-				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Setpoint Próximo Ciclo:</label>
+				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Acionamento Bomba de Recirculação:</label>
 					  <div class="col-xs-10">
-						 {{ form.next_cycle_set}}
-						 {{ form.next_cycle.errors}}
+						 {{ form.recirculation_pump_set}}
+						 {{ form.recirculation_pump_set.errors}}
+					  </div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-xs-4 col-form-label, embraco-font-dark-green">Acionamento Bomba de Solução:</label>
+					  <div class="col-xs-10">
+						 {{ form.solution_pump_set}}
+						 {{ form.solution_pump_set.errors}}
 					  </div>
 			</div>
 		</div>

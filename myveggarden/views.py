@@ -51,7 +51,8 @@ def getSetpoints(request, pk, template_name='certification/certification-new.htm
             # redirect to a new URL:
             form.save()
             return HttpResponseRedirect("/history/")
-    return HttpResponse(instance.concentration_set)
+    return HttpResponse(instance.concentration_set + '$' + instance.next_cycle_set + '$' + instance.cycle_time_set
+                        + '$' + instance.plant_pump_set + '$' + instance.recirculation_pump_set + '$' + instance.solution_pump_set)
     # + "/n" + instance.next_cycle_set
 
 
