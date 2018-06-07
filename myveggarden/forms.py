@@ -31,6 +31,7 @@ class GardenForm(forms.ModelForm):
         fields = [
             "concentration",
             "luminosity",
+            "temperature",
          #   "next_cycle",
          #   "cycle_time",
             "plant_pump",
@@ -40,6 +41,7 @@ class GardenForm(forms.ModelForm):
         widgets = {
             "concentration": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0}),
             "luminosity": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+            "temperature": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
          #   "next_cycle": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
          #   "cycle_time": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
             "plant_pump": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),

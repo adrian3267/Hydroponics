@@ -13,6 +13,7 @@ class GardenSet(models.Model):
 class Garden(models.Model):
     concentration = models.CharField(max_length=140, default='')
     luminosity = models.CharField(max_length=140, default='')
+    temperature = models.CharField(max_length=140, default='')
     next_cycle = models.CharField(max_length=140, default='')
     cycle_time = models.CharField(max_length=140, default='')
     plant_pump = models.CharField(max_length=140, default='')
