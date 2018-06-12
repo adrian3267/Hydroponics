@@ -61,8 +61,20 @@ def getSetpoints(request, pk, template_name='certification/certification-new.htm
 
 def overview(request):
     garden_obj = Garden.objects.all().order_by("-id")[:1]
-    #garden_obj = Garden.objects.get(id=1)
-    return render(request, 'myveggarden/overview.html', { "garden_obj": garden_obj })
+
+    instance = GardenSet.objects.get(id=1)
+    form = GardenSetForm(request.POST or None, instance=instance)
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            savedform = form.save()
+            # redirect to a new URL:
+            return HttpResponseRedirect('/myveggarden/history')
+
+    return render(request, 'myveggarden/overview.html', {"form": form, "garden_obj":garden_obj})
+#, {"garden_obj": garden_obj}
 
 def home(request):
     return render(request, 'myveggarden/home.html')

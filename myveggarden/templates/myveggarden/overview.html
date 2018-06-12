@@ -3,31 +3,43 @@
 {% block content %}
 {% load staticfiles %}
 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	<script src="{%  static 'js/form-new.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/form-new2.css' %}">
 
-    <div id="bigbox" class="center">
-        <div class="boxes">
-            <br><p>Concentração Atual:</p><p>{{ garden_obj.first.concentration }}</p>
-        </div>
+    <form method="post">
+        {% csrf_token %}
+        <div id="bigbox" class="center">
+            <div class="boxes">
+                <p style="font-size:20px; margin-top: 10px;">Concentração Atual:</p><p style="font-size:20px;">{{ garden_obj.first.concentration }}</p>
+                <hr/>
+                <p style="font-size:20px; margin-top: 20px;">Valor de Referência:</p><p style="font-size:20px; margin-left:70px; margin-right:70px;">{{ form.concentration_set}}</p>
+            </div>
 
-        <div class="boxes">
-            <br><p>Luminosidade Atual:</p><p>{{ garden_obj.first.luminosity }}</p>
-        </div>
+            <div class="boxes">
+                <br><p style="font-size:24px; margin-top: 20px;">Luminosidade Atual:</p><p style="font-size:24px;">{{ garden_obj.first.luminosity }}</p>
+            </div>
 
-        <div class="boxes">
-            <br><p>Temperatura:</p><p>{{ garden_obj.first.temperature }}</p>
-        </div>
+            <div class="boxes">
+                <br><p style="font-size:24px; margin-top: 20px;">Temperatura:</p><p style="font-size:24px;">{{ garden_obj.first.temperature }}</p>
+            </div>
 
-        <div class="boxes" id="white_box">
-            <br><p>Bomba de Irrigação:</p><p>{{ garden_obj.first.plant_pump }}</p>
-        </div>
+            <div class="boxes" id="white_box">
+                <br><p style="font-size:20px;">Bomba de Irrigação:</p><p style="font-size:20px;">{{ garden_obj.first.plant_pump }}</p>
+            </div>
 
-        <div class="boxes" id="white_box">
-            <br><p>B. de Recirculação:</p><p>{{ garden_obj.first.recirculation_pump }}</p>
-        </div>
+            <div class="boxes" id="white_box">
+                <br><p style="font-size:20px;">B. de Recirculação:</p><p style="font-size:20px;">{{ garden_obj.first.recirculation_pump }}</p>
+            </div>
 
-        <div class="boxes" id="white_box">
-            <br><p>Bomba de Solução:</p><p>{{ garden_obj.first.solution_pump }}</p>
+            <div class="boxes" id="white_box">
+                <br><p style="font-size:20px;">Bomba de Solução:</p><p style="font-size:20px;">{{ garden_obj.first.solution_pump }}</p>
+            </div>
         </div>
-    </div>
-    <a href="/myveggarden/history"><span style="float:right; margin-top:-5px; margin-right:40px;"><input type="button" class="btn btn-ppap-form" value="Histórico" /></span></a>
+        <a href="/myveggarden/history"><span style="float:right; margin-top:-5px; margin-right:40px;"><input type="button" class="btn btn-ppap-form" value="Histórico" /></span></a>
+
+        <input type="submit" class="btn btn-ppap-form"  value="Enviar Dados" />
+	</form>
 {% endblock %}
