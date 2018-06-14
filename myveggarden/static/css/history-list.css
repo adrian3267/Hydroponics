@@ -1,0 +1,113 @@
+.tableBox {
+	height: 400px;
+	background-color: #FFFFFF;
+	top: 2px;
+	float: middle;
+	position: relative;
+}
+
+#centerBox {
+	margin: auto;
+    width: 80%;
+}
+
+.color1 {
+	background-color: #008791;
+	color: white;
+}
+.normaltext {
+	color: #008791;
+	font-size: 16px;
+	font-family: Verdana;
+	display: inline-block;
+}
+#main_heading{
+	color: #008791;
+	font-size: 24px;
+	font-family: Verdana;
+}
+#rowcolor {
+	background-color: #DDEEF4;
+}
+
+#space_from_text {
+    margin-left: 0.7%;
+}
+
+#column_style{
+    text-align: center;
+}
+/*#searchBox {
+	width: 45%;
+	height: 11%;
+	float: left;
+}*/
+
+tr th {
+	text-align: center;
+}
+
+
+/*.results tr[visible='false'],
+.no-result{
+  display:none;
+}
+
+.results tr[visible='true']{
+  display:table-row;
+}*/
+
+
+.table_row_style {
+	text-align: center;
+}
+
+thead, tbody, tr, td, th { display: block; }
+
+tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+tbody {
+    height: 450px;
+    overflow-y: auto;
+}
+
+
+tbody td, thead th {
+	width: 20%;
+    float: left;
+}
+
+
+/*The CSS code below is just for enabling the "Filter Function"*/
+
+.filterable {
+    margin-top: 15px;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: white;
+    font-size: 16px;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: white;
+    font-size: 16px;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: white;
+    font-size: 16px;
+}
