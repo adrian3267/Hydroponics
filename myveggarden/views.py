@@ -71,7 +71,7 @@ def overview(request):
             # process the data in form.cleaned_data as required
             savedform = form.save()
             # redirect to a new URL:
-            return HttpResponseRedirect('/myveggarden/history')
+            return HttpResponseRedirect('/myveggarden/')
 
     return render(request, 'myveggarden/overview.html', {"form": form, "garden_obj":garden_obj})
 #, {"garden_obj": garden_obj}

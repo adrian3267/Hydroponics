@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 	<script src="{%  static 'js/form-new.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/form-new2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/garden-overview.css' %}">
 
     <form method="post">
         {% csrf_token %}
         <div id="bigbox" class="center">
             <div class="boxes">
                 <p style="font-size:20px; margin-top: 10px;">Concentração Atual:</p><p style="font-size:20px;">{{ garden_obj.first.concentration }}</p>
-                <hr/>
-                <p style="font-size:20px; margin-top: 20px;">Valor de Referência:</p><p style="font-size:20px; margin-left:70px; margin-right:70px;">{{ form.concentration_set}}</p>
+                <hr style="border-width:2px;"/>
+                <p style="font-size:20px; margin-top: 20px;">Valor de Referência:</p><p style="font-size:40px; margin-left:60px; margin-right:60px;">{{ form.concentration_set}}</p>
             </div>
 
             <div class="boxes">
@@ -23,23 +23,40 @@
             </div>
 
             <div class="boxes">
-                <br><p style="font-size:24px; margin-top: 20px;">Temperatura:</p><p style="font-size:24px;">{{ garden_obj.first.temperature }}</p>
+                <br><p style="font-size:24px; margin-top: 20px;">Temperatura:</p><p style="font-size:24px;">{{ garden_obj.first.temperature }}ºC</p>
             </div>
 
             <div class="boxes" id="white_box">
-                <br><p style="font-size:20px;">Bomba de Irrigação:</p><p style="font-size:20px;">{{ garden_obj.first.plant_pump }}</p>
+                <p style="font-size:20px; margin-top: 10px;">Bomba de Irrigação:</p><p style="font-size:20px;">{{ garden_obj.first.plant_pump }}</p>
+                <hr style="border-color: #69B39E; border-width:2px;"/>
+                <p style="font-size:20px; margin-top: 20px;">Valor de Referência:</p><p style="font-size:20px; margin-left:60px; margin-right:60px;">{{ form.plant_pump_set}}</p>
+
             </div>
 
             <div class="boxes" id="white_box">
-                <br><p style="font-size:20px;">B. de Recirculação:</p><p style="font-size:20px;">{{ garden_obj.first.recirculation_pump }}</p>
+                <p style="font-size:20px; margin-top: 10px;">B. de Recirculação:</p><p style="font-size:20px;">{{ garden_obj.first.recirculation_pump }}</p>
+                <hr style="border-color: #69B39E; border-width:2px;"/>
+                <p style="font-size:20px; margin-top: 20px;">Valor de Referência:</p><p style="font-size:20px; margin-left:60px; margin-right:60px;">{{ form.recirculation_pump_set}}</p>
+
             </div>
 
             <div class="boxes" id="white_box">
-                <br><p style="font-size:20px;">Bomba de Solução:</p><p style="font-size:20px;">{{ garden_obj.first.solution_pump }}</p>
+                <p style="font-size:20px; margin-top: 10px;">Bomba de Solução:</p><p style="font-size:20px;">{{ garden_obj.first.solution_pump }}</p>
+                <hr style="border-color: #69B39E; border-width:2px;"/>
+                <p style="font-size:20px; margin-top: 20px;">Valor de Referência:</p><p style="font-size:20px; margin-left:60px; margin-right:60px;">{{ form.solution_pump_set}}</p>
+
+            </div>
+
+            <div class="boxes">
+                <br/><p style="font-size:20px; margin-top: 20px;">Próximo Ciclo:</p><p style="font-size:20px; margin-left:60px; margin-right:60px;">{{ form.next_cycle_set}}</p>
+            </div>
+
+            <div class="boxes">
+                <br/><p style="font-size:20px; margin-top: 20px;">Tempo de Ciclo:</p><p style="font-size:20px; margin-left:60px; margin-right:60px;">{{ form.cycle_time_set}}</p>
             </div>
         </div>
         <a href="/myveggarden/history"><span style="float:right; margin-top:-5px; margin-right:40px;"><input type="button" class="btn btn-ppap-form" value="Histórico" /></span></a>
 
-        <input type="submit" class="btn btn-ppap-form"  value="Enviar Dados" />
+        <input style="margin-left: 40px; width: 120px;" type="submit" class="btn btn-ppap-form"  value="Enviar Dados" />
 	</form>
 {% endblock %}

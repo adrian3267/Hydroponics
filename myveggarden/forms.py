@@ -14,13 +14,20 @@ class GardenSetForm(forms.ModelForm):
             "recirculation_pump_set",
             "solution_pump_set",
         ]
+
+        CHOICES = (
+            ('Desligar', 'Desligar'),
+            ('Automático', 'Automático'),
+            ('Ligar', 'Ligar'),
+        )
+
         widgets = {
-            "concentration_set": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0}),
-            "next_cycle_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
-            "cycle_time_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
-            "plant_pump_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
-            "recirculation_pump_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
-            "solution_pump_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field'}),
+            "concentration_set": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0, 'style':'text-align:center'}),
+            "next_cycle_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
+            "cycle_time_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
+            "plant_pump_set": forms.Select(choices=CHOICES, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
+            "recirculation_pump_set": forms.Select(choices=CHOICES, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
+            "solution_pump_set": forms.Select(choices=CHOICES, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
         }
 
 
