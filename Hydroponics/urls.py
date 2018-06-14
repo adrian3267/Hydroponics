@@ -20,10 +20,7 @@ urlpatterns = [
     url(r'^', include('main.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include('authentication.urls')),
-    url(r'^certification/', include('certification.urls')),
-    url(r'^process-map/', include('processMap.urls')),
     url(r'^manage-users/', include('manageUsers.urls')),
-    url(r'^evaluation-report/', include('evaluationReport.urls')),
     url(r'^myveggarden/', include('myveggarden.urls')),
     url(r'^home/', include('myveggarden.urls')),
 
