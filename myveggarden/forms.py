@@ -23,7 +23,7 @@ class GardenSetForm(forms.ModelForm):
 
         widgets = {
             "concentration_set": forms.NumberInput(attrs={'class': 'form-control ppap-form-field', 'min': 0, 'style':'text-align:center'}),
-            "next_cycle_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
+            "next_cycle_set": forms.DateInput(attrs={'class': 'form-control ppap-form-field datepicker', 'style':'text-align:center'}),
             "cycle_time_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
             "plant_pump_set": forms.Select(choices=CHOICES, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
             "recirculation_pump_set": forms.Select(choices=CHOICES, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
