@@ -15,7 +15,7 @@ class Garden(models.Model):
     luminosity = models.CharField(max_length=140, default='')
     temperature = models.CharField(max_length=140, default='')
     next_cycle = models.CharField(max_length=140, default='')
-    cycle_time = models.CharField(max_length=140, default='')
+    last_update = models.CharField(max_length=140, default='')
     plant_pump = models.CharField(max_length=140, default='')
     recirculation_pump = models.CharField(max_length=140, default='')
     solution_pump = models.CharField(max_length=140, default='')
