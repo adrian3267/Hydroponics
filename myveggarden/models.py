@@ -4,7 +4,6 @@ from django.db import models
 
 class GardenSet(models.Model):
     concentration_set = models.CharField(max_length=140, default='')
-    next_cycle_set = models.CharField(max_length=140, default='')
     cycle_time_set = models.CharField(max_length=140, default='')
     plant_pump_set = models.CharField(max_length=140, default='')
     recirculation_pump_set = models.CharField(max_length=140, default='')
