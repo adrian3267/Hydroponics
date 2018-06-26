@@ -19,6 +19,11 @@ class GardenSetForm(forms.ModelForm):
             ('Desligar', 'Desligar'),
             ('Automático', 'Automático'),
             ('Ligar', 'Ligar'),
+
+        )
+        CHOICES2 = (
+            ('Desligar', 'Desligar'),
+            ('Ligar', 'Ligar'),
         )
 
         widgets = {
@@ -26,8 +31,8 @@ class GardenSetForm(forms.ModelForm):
             "next_cycle_set": forms.DateInput(attrs={'class': 'form-control ppap-form-field datepicker', 'style':'text-align:center'}),
             "cycle_time_set": forms.TextInput(attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
             "plant_pump_set": forms.Select(choices=CHOICES, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
-            "recirculation_pump_set": forms.Select(choices=CHOICES, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
-            "solution_pump_set": forms.Select(choices=CHOICES, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
+            "recirculation_pump_set": forms.Select(choices=CHOICES2, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
+            "solution_pump_set": forms.Select(choices=CHOICES2, attrs={'class': 'form-control ppap-form-field', 'style':'text-align:center'}),
         }
 
 

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 import datetime
+import time
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import GardenForm, GardenSetForm
@@ -60,21 +61,22 @@ def getSetpoints(request, pk, template_name='certification/certification-new.htm
 
 
 def overview(request):
-    garden_obj = Garden.objects.all().order_by("-id")[:1]
 
-    instance = GardenSet.objects.get(id=1)
-    form = GardenSetForm(request.POST or None, instance=instance)
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            savedform = form.save()
-            # redirect to a new URL:
-            return HttpResponseRedirect('/myveggarden/')
+        garden_obj = Garden.objects.all().order_by("-id")[:1]
+        instance = GardenSet.objects.get(id=1)
+        form = GardenSetForm(request.POST or None, instance=instance)
+        # if this is a POST request we need to process the form data
+        if request.method == 'POST':
+            # check whether it's valid:
+            if form.is_valid():
+                # process the data in form.cleaned_data as required
+                savedform = form.save()
+                # redirect to a new URL:
+                return HttpResponseRedirect('/myveggarden/')
 
-    return render(request, 'myveggarden/overview.html', {"form": form, "garden_obj":garden_obj})
-#, {"garden_obj": garden_obj}
+        return render(request, 'myveggarden/overview.html', {"form": form, "garden_obj":garden_obj})
+
+
 
 def home(request):
     return render(request, 'myveggarden/home.html')
